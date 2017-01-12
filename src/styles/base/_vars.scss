@@ -1,0 +1,21 @@
+// File for scss-vars.
+// For example: main colors, paddings and so on.
+
+//type 
+$body-color: #1C2331;
+$body-bg:    #eceff1;
+$font-family-base: Roboto;
+
+//btns
+$btn-border-radius: 0px;
+$btn-border-color: #3E4551;
+
+//grid
+$grid-gutter: 15px;
+$breakpoint: ( 
+   xxs: 321px, 
+    xs: 480px, 
+    sm: 576px, 
+    md: 768px, 
+    lg: 920px
+) !default;

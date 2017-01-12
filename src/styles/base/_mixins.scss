@@ -1,0 +1,67 @@
+// Mixins.
+
+@mixin nl {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    list-style: none;
+    list-style-position: outside;
+}
+
+%nl {
+    @include nl;
+}
+
+@mixin cf {
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .lt-ie8 & {
+        zoom: 1;
+    }
+}
+
+%cf {
+    @include cf;
+}
+
+// You can add your own mixins here:
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function in-perc($val, $width: strip-unit($container-max-width - $container-gutter)){
+    @return ($val / $width * 100%);
+}
+
+@mixin abs-fill ($offset:0){
+    position: absolute;
+    top: $offset;
+    bottom: $offset;
+    left: $offset;
+    right: $offset;
+    width: 100%;
+    height: 100%;
+} 
+%abs-fill { @include abs-fill; }
+
+@mixin table-fill {
+    display: table;
+    width: 100%;
+    height: 100%;
+} 
+%table-fill { @include table-fill; }

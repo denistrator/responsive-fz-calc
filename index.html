@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive font size calculator</title>
+  <meta name="description" content="">
+  <link rel="stylesheet" href="dist/styles/screen.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="block block-fill-height">
+			<div class="block-header">
+				<div class="block-inner">
+					<div class="container">
+						<h1 class="page-head">Responsive font size calculator</h1>
+					</div>
+				</div><!-- block-inner -->
+			</div><!-- block-header -->
+			<div class="block-content">
+				<div class="block-inner">
+					<div class="container">
+						<div class="calc">
+							<ul class="calc-inputs row">
+								<li class="calc-inputs-item col-sm-6">
+									<label class="calc-input-label" for="calc-input-min-width">Min screen with</label>
+									<input id="calc-input-min-width" type="text" class="calc-input" value="320">
+								</li>
+								<li class="calc-inputs-item col-sm-6">
+									<label class="calc-input-label" for="calc-input-max-width">Max screen with</label>
+									<input id="calc-input-max-width" type="text" class="calc-input" value="1140">
+								</li>
+								<li class="calc-inputs-item col-sm-6">
+									<label class="calc-input-label" for="calc-input-min-fz">Min font size</label>
+									<input id="calc-input-min-fz" type="number" class="calc-input" value="14">
+								</li>
+								<li class="calc-inputs-item col-sm-6">
+									<label class="calc-input-label" for="calc-input-max-fz">Max font size</label>
+									<input id="calc-input-max-fz" type="number" class="calc-input" value="24">
+								</li>
+								<li class="calc-inputs-item col-sm-6">
+									<label class="calc-input-label" for="calc-input-custom-point">Your point screen size</label>
+									<input id="calc-input-custom-point" type="text" class="calc-input">
+								</li>
+								<li class="calc-inputs-item col-sm-6">
+									<div class="calc-hints">
+										<span class="calc-hint">480</span>
+										<span class="calc-hint">568</span>
+										<span class="calc-hint">768</span>
+										<span class="calc-hint">1024</span>
+									</div>
+								</li>
+							</ul>
+							<div class="calc-result">
+								<button class="btn calc-btn-make-calc">Calc</button>
+								<p class="calc-result-text"></p>
+							</div>
+						</div>
+					</div>
+				</div><!-- block-inner -->
+			</div><!-- block-content -->
+			<div class="block-footer">
+				<div class="block-inner">
+					<div class="container">
+						<p class="copy">&copy; <a href="http://denistrator.esy.es/resume/index.html">Belevtsov Denis</a></p>
+					</div>
+				</div><!-- block-inner -->
+			</div><!-- block-footer -->
+		</div><!-- block -->
+	</div><!-- wrapper -->
+	<script
+	  src="http://code.jquery.com/jquery-3.1.1.min.js"
+	  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	  crossorigin="anonymous"></script>
+ 	<script src="dist/scripts/main.js"></script>
+</body>
+</html>

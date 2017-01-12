@@ -1,0 +1,59 @@
+$grid-gutter: 15px !default;
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+&:before,
+&:after {
+	box-sizing: inherit;
+}
+
+html, body, .wrapper {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+}
+
+.wrapper {
+	max-width: 1920px;
+	min-height: 100vh;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.js-fine-align-landscape {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+    margin: auto;
+}
+.js-fine-align-portrait {
+	display: block;
+	margin: auto;
+	max-height: 100%;
+}
+
+.ver-indents {
+	&-parent {
+		// overflow: hidden; // remove?
+		margin-top: -$grid-gutter / 2;
+		margin-bottom: -$grid-gutter / 2;
+	}
+	&-child {
+		padding-top: $grid-gutter / 2;
+		padding-bottom: $grid-gutter / 2;
+	}
+}
+
+.ta {
+	&r {
+		text-align: right;	
+	}
+}

@@ -1,0 +1,47 @@
+.calc {
+	text-align: center;
+	&-inputs {
+		@extend %nl;
+		&-item {
+			padding-top: 10px;
+			padding-bottom: 10px;
+			// text-align: center;
+		}
+	}
+	&-input {
+		&-label {
+			min-width: 10em;
+			display: inline-block;
+		}
+		margin-top: -10px;
+		margin-bottom: -10px;
+	}
+	&-btn {
+		&-make-calc {
+			margin-top: 15px;
+		}
+	}
+	&-result {
+		&-text {
+			margin-top: 15px;
+			font-size: 18px;
+			&.note {
+				color: #ff4444;
+			}
+		}
+	}
+	&-hints {
+		padding-top: 22px;
+		text-align: center;
+	}
+	&-hint {
+		cursor: pointer;
+		color: #0099CC;
+		& + & {
+			margin-left: 15px;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

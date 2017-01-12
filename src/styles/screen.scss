@@ -1,0 +1,42 @@
+@import 'base/vars';
+@import 'base/mixins';
+
+@import 'base/normalize';
+@import 'base/global';
+@import "base/grid";
+// Grid without unused classes cleared by uncss
+// @import 'uncss-output/grid';
+@import "base/blocks";
+@import "base/type";
+@import "base/btns";
+@import "base/forms";
+
+// Import Layouts
+// @import 'layouts/home';
+
+// Import Plugins
+// @import 'plugins/plugin';
+
+// Import Components
+// @import 'components/header';
+@import 'components/calc';
+
+.page {
+	&-head {
+		text-align: center;
+		margin: 0.6em;
+		font-size: 40px;
+		font-size: calc( (100vw - 320px)/(960 - 320) * (50 - 34) + 34px);
+		font-weight: 300;
+	}
+}
+
+.copy {
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	color: #4B515D;
+	a {
+		color: inherit;
+	}
+}

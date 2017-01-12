@@ -1,0 +1,68 @@
+$btn-color: #333 !default;
+$btn-font-size: 16px !default;
+$btn-font-family: sans-serif !default;
+$btn-font-weight: normal !default;
+$btn-text-transform: none !default;
+$btn-bg-color: #dddddd !default;
+$btn-border-color: $btn-bg-color !default;
+$btn-border: 1px solid $btn-border-color !default;
+$btn-border-radius: 4px !default;
+$btn-padding: 10px 20px !default;
+
+$btn-color-hover: lighten($btn-color, 10%) !default;
+$btn-bg-color-hover: lighten($btn-bg-color, 10%) !default;
+$btn-border-color-hover: lighten($btn-border-color, 10%) !default;
+
+@mixin btn-variants( 
+    $color, 
+    $bg, 
+    $border, 
+    $color-hover: lighten($color, 10%), 
+    $bg-hover: lighten($bg, 10%), 
+    $border-hover: lighten($border, 10%)
+    ) {
+    color: $color;
+    background-color: $bg;
+    border-color: $border;
+    @content;
+    &:hover {
+        color: $color-hover;
+        background-color: $bg-color-hover;
+        border-color: $border-hover;
+    }
+}
+
+@mixin btn-size($font-size, $padding, $radius: $btn-border-radius){
+    font-size: $font-size;
+    padding: $padding;
+    border-radius: $radius;
+}
+
+.btn {
+    &:not(.prevent-tt) {
+        text-transform: $btn-text-transform;        
+    }
+    display: inline-block;
+    max-width: 100%;
+    -webkit-user-select: none;
+            user-select: none;
+    cursor: pointer;
+    font-family: $btn-font-family;
+    font-weight: $btn-font-weight;
+    font-size: $btn-font-size;
+    color: $btn-color;
+    background-color: $btn-bg-color;
+    border: $btn-border;
+    border-radius: $btn-border-radius;
+    padding: $btn-padding;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    outline: none;
+
+    &:hover {
+        color: $btn-color-hover;
+        background-color: $btn-bg-color-hover;
+        border-color: $btn-border-color-hover;
+    }
+}
