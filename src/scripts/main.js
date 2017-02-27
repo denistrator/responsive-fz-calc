@@ -1,21 +1,30 @@
-$(".calc-hint").click(function () {
-    $("#calc-input-custom-point").val($(this).text());
-});
-$(".calc-btn-make-calc").click(function(){
-    var min_with = Number($("#calc-input-min-width").val());
-    var max_with = Number($("#calc-input-max-width").val());
-    var min_font = Number($("#calc-input-min-fz").val());
-    var max_font = Number($("#calc-input-max-fz").val());
-    var custom_point = Number($("#calc-input-custom-point").val());
+(function() {
+    var calcHins = document.querySelectorAll(".calc-hint");
+    var custom_point = document.querySelector("#calc-input-custom-point");
 
-    var result = ( (custom_point - min_with)/(max_with - min_with) * (max_font - min_font) + min_font);
-    
-    $(".calc-result-text").text(""); 
-    if (custom_point < max_with && custom_point > min_with) {
-        $(".calc-result-text").removeClass("note").text(result.toFixed(2));   
-    } else {
-        $(".calc-result-text").addClass("note").text("Please enter number between min and max screen size");   
+    for (var i = calcHins.length - 1; i >= 0; i--) {
+        calcHins[i].addEventListener("click", function() {
+            custom_point.value = this.innerHTML;
+        }, false);
     }
 
-    console.log(result);
-});
+    document.querySelector(".calc-btn-make-calc").addEventListener("click", function() {
+        var min_with = +document.querySelector("#calc-input-min-width").value;
+        var max_with = +document.querySelector("#calc-input-max-width").value;
+        var min_font = +document.querySelector("#calc-input-min-fz").value;
+        var max_font = +document.querySelector("#calc-input-max-fz").value;
+        var custom_point = +document.querySelector("#calc-input-custom-point").value;
+
+        var result = ((custom_point - min_with) / (max_with - min_with) * (max_font - min_font) + min_font);
+
+        var resultMessage = document.querySelector(".calc-result-text");
+        resultMessage.innerHTML = "";
+        if (custom_point <= max_with && custom_point >= min_with) {
+            resultMessage.classList.remove("note");
+            resultMessage.innerHTML = result.toFixed(2);
+        } else {
+            resultMessage.classList.add("note");
+            resultMessage.innerHTML = "Please enter number between min and max screen size";
+        }
+    }, false);
+})();
